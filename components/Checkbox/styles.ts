@@ -3,7 +3,7 @@ import variables from '../../common/styles/variables'
 
 export default {
   checkboxContainer: {
-    backgroundColor: '#fff'
+    backgroundColor: variables.mtdFillBase
   },
   checkboxItemContainer: {
     paddingVertical: 18,

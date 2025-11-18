@@ -3,7 +3,7 @@ import variables from '../../common/styles/variables'
 
 export default StyleSheet.create({
   wrapper: {
-    backgroundColor: '#fff',
+    backgroundColor: variables.mtdFillBase,
     justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center'

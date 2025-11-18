@@ -1,19 +1,16 @@
-import {
-  StyleSheet,
-  PixelRatio
-} from 'react-native'
-import variables from '../../common/styles/variables'
+import {StyleSheet, PixelRatio} from 'react-native';
+import variables from '../../common/styles/variables';
 
-const px = 1 / PixelRatio.get()
+const px = 1 / PixelRatio.get();
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: variables.mtdFillBody
+    backgroundColor: variables.mtdFillBody,
   },
   header: {
     borderBottomWidth: 1 * px,
     borderBottomColor: variables.mtdBorderColorDark,
-    backgroundColor: '#fff'
+    backgroundColor: variables.mtdFillBase,
   },
 
   title: {
@@ -22,19 +19,19 @@ export default StyleSheet.create({
 
     textAlign: 'center',
     fontSize: variables.mtdFontSizeM,
-    color: variables.mtdGray
+    color: variables.mtdGray,
   },
 
   body: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'rgba(0, 0, 0, 0)'
+    backgroundColor: 'rgba(0, 0, 0, 0)',
   },
 
   item: {
     borderBottomWidth: 1 * px,
     borderBottomColor: variables.mtdBorderColorDark,
-    backgroundColor: '#fff'
+    backgroundColor: variables.mtdFillBase,
   },
 
   itemText: {
@@ -43,6 +40,6 @@ export default StyleSheet.create({
 
     fontSize: variables.mtdFontSizeL,
     textAlign: 'center',
-    color: variables.mtdGrayBase
-  }
-})
+    color: variables.mtdGrayBase,
+  },
+});

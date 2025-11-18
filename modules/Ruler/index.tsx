@@ -116,7 +116,7 @@ export class Ruler extends Component<RulerProps, any> {
                             textAlignVertical: 'center',
                             textAlign: 'center',
                             fontSize: 10,
-                            color: '#fff',
+                            color: variables.mtdFillBase,
                           }}
                           numberOfLines={undefined}>
                           {value}

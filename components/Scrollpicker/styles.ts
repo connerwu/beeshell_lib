@@ -6,7 +6,7 @@ import variables from '../../common/styles/variables'
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
-    backgroundColor: '#fff'
+    backgroundColor: variables.mtdFillBase
   },
 
   proportionWrapper: {

@@ -18,7 +18,7 @@ import variables from '../../common/styles/variables'
 const styles = StyleSheet.create({
   container: {
     paddingVertical: variables.mtdVSpacingX4L,
-    backgroundColor: '#fff',
+    backgroundColor: variables.mtdFillBase,
   },
 
   header: {
@@ -132,6 +132,7 @@ export class Calendar extends React.Component<CalendarProps, any> {
       })
     }
   }
+
 
   init(props) {
     let { date, startDate, endDate } = props

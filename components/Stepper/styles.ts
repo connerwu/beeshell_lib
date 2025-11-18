@@ -70,14 +70,14 @@ export default {
   ctrlSymbolHor: {
     width: 14,
     height: 2,
-    backgroundColor: '#fff',
+    backgroundColor: variables.mtdFillBase,
     borderRadius: 2
   },
   ctrlSymboVer: {
     position: 'absolute',
     width: 2,
     height: 14,
-    backgroundColor: '#fff',
+    backgroundColor: variables.mtdFillBase,
     borderRadius: 2
   },
   ctrlSymbolSolid: {
@@ -87,7 +87,7 @@ export default {
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: 28,
-    color: '#fff',
+    color: variables.mtdFillBase,
     borderRadius: 100
   },
   input: {

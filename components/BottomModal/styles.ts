@@ -2,10 +2,11 @@ import {
   StyleSheet
 } from 'react-native'
 import varibles from '../../common/styles/variables'
+import variables from "../../common/styles/variables";
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: '#fff'
+    backgroundColor: variables.mtdFillBase
   },
   header: {
     borderBottomWidth: varibles.mtdBorderWidth,

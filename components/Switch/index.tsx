@@ -189,7 +189,7 @@ export class Switch extends Component<SwitchProps, SwitchState> {
 
     const interpolatedBackgroundColor = switchAnimation.interpolate({
       inputRange: value ? [-this.offset, -1] : [1, this.offset],
-      outputRange: ['#fff', activeColor],
+      outputRange: [variables.mtdFillBase, activeColor],
       extrapolate: 'clamp'
     })
 
@@ -214,7 +214,7 @@ export class Switch extends Component<SwitchProps, SwitchState> {
     const interpolatedCircleColor = switchAnimation.interpolate({
       inputRange: value ? [-this.offset, -1] : [1, this.offset],
       // outputRange: [rockerColor, rockerActiveColor],
-      outputRange: ['#fff', '#fff'],
+      outputRange: [variables.mtdFillBase, variables.mtdFillBase],
       extrapolate: 'clamp'
     })
 

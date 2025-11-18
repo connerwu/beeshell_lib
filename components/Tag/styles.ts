@@ -29,7 +29,7 @@ const primaryWrapper = {
 
 const primaryText = {
   ...defaultText,
-  color: '#fff'
+  color: variables.mtdFillBase
 }
 
 const dangerWrapper = {
@@ -39,7 +39,7 @@ const dangerWrapper = {
 }
 const dangerText = {
   ...defaultText,
-  color: '#fff'
+  color: variables.mtdFillBase
 }
 
 const warningWrapper = {
@@ -49,7 +49,7 @@ const warningWrapper = {
 }
 const warningText = {
   ...defaultText,
-  color: '#fff'
+  color: variables.mtdFillBase
 }
 
 const successWrapper = {
@@ -59,7 +59,7 @@ const successWrapper = {
 }
 const successText = {
   ...defaultText,
-  color: '#fff'
+  color: variables.mtdFillBase
 }
 
 
@@ -71,7 +71,7 @@ const infoWrapper = {
 
 const infoText = {
   ...defaultText,
-  color: '#fff'
+  color: variables.mtdFillBase
 }
 
 export default StyleSheet.create({

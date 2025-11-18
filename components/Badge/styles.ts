@@ -15,7 +15,7 @@ export default {
   },
   label: {
     textAlign: 'center',
-    color: '#fff',
+    color: variables.mtdFillBase,
     fontSize: 10
   },
   dot: {

@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 import varibles from '../../common/styles/variables'
+import variables from "../../common/styles/variables";
 
 export default StyleSheet.create({
   container: {
@@ -16,6 +17,6 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 14,
     lineHeight: 16,
-    color: '#fff',
+    color: variables.mtdFillBase,
   }
 })

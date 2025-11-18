@@ -27,6 +27,6 @@ export default {
     bottom: 0,
     width: 25,
     height: 2,
-    backgroundColor: '#fff'
+    backgroundColor: variables.mtdFillBase
   }
 }

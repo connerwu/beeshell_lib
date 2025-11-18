@@ -14,7 +14,7 @@ const buttons = {
     alignItems: 'center',
     paddingHorizontal: variables.mtdHSpacingL,
     paddingVertical: variables.mtdVSpacingL,
-    backgroundColor: '#fff'
+    backgroundColor: variables.mtdFillBase
   },
 
   defaultText: {
@@ -25,7 +25,7 @@ const buttons = {
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: variables.mtdFillBase,
     borderRadius: variables.mtdRadiusXS,
     overflow: 'hidden'
   },
@@ -70,7 +70,7 @@ export default StyleSheet.create({
   btnConfirmWrapper: {
     ...buttons.defaultWrapper,
     borderWidth: 0,
-    backgroundColor: '#fff'
+    backgroundColor: variables.mtdFillBase
   } as ViewStyle,
 
   btnConfirmText: {

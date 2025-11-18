@@ -3,7 +3,7 @@ import variables from '../../common/styles/variables'
 export default {
   container: {
     // flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: variables.mtdFillBase
   },
   inputStyle: {
     padding: 0,

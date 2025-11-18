@@ -21,6 +21,11 @@ interface InputProps extends TextInputProps {
   textAlign?: string
   style?: ViewStyle
   inputStyle?: TextStyle
+  onBlur: Function
+  onChange: Function
+  onFocus: Function
+  clearButtonMode:string
+  value:string
 }
 
 interface InputState {

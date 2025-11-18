@@ -13,7 +13,7 @@ const defaultWrapper = {
   borderColor: variables.mtdBorderColorDarker,
   borderRadius: variables.buttonBorderRadius,
 
-  backgroundColor: '#fff',
+  backgroundColor: variables.mtdFillBase,
   overflow: 'hidden'
 }
 

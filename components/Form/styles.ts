@@ -5,7 +5,7 @@ import {
 
 export default {
   form: {
-    backgroundColor: '#fff'
+    backgroundColor: variables.mtdFillBase
   },
   title: {
     paddingHorizontal: variables.mtdHSpacingL,
