@@ -42,7 +42,7 @@ export class Progress extends Component<ProgressProps, any> {
   componentDidMount () {
   }
 
-  componentWillReceiveProps (nextProps: ProgressProps) {
+  componentDidUpdate (nextProps: ProgressProps) {
     if (
       this.props.easing &&
       nextProps.percent !== this.props.percent

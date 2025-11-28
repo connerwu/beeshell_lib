@@ -152,7 +152,7 @@ export class Scrollpicker extends React.Component<ScrollpickerProps, Scrollpicke
     })
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentDidUpdate (nextProps) {
 
     if (nextProps !== this.props) {
       const data = this.initialize(nextProps)

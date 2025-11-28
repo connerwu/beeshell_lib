@@ -260,7 +260,7 @@ export class Cascader extends Component<CascaderProps, any> {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     if (
       nextProps.value !== this.props.value ||
       nextProps.data !== this.props.data

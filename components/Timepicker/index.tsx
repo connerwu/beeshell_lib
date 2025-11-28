@@ -109,7 +109,7 @@ export class Timepicker extends React.Component<TimepickerProps, any> {
     return data
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentDidUpdate (nextProps) {
     if (nextProps.value !== this.props.value) {
       this.setState({
         ...this.state,

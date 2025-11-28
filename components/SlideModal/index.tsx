@@ -150,7 +150,7 @@ export class SlideModal<
     }
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentDidUpdate (nextProps) {
     if (
       nextProps.direction !== this.props.direction ||
       nextProps.align !== this.props.align ||

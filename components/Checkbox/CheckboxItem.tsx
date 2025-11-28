@@ -57,7 +57,7 @@ export class CheckboxItem<T extends CheckboxItemProps, P > extends Component<T, 
     this.animated && this.animated.toIn()
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentDidUpdate (nextProps) {
     if (nextProps.checked !== this.props.checked) {
       this.animated && this.animated.toIn()
     }

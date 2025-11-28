@@ -71,7 +71,7 @@ export class Switch extends Component<SwitchProps, SwitchState> {
     this.offset = switchWidth - switchHeight + 1
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentDidUpdate (nextProps) {
     if (nextProps.value === this.state.value) {
       return
     }

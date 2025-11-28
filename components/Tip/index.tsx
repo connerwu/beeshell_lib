@@ -96,7 +96,7 @@ export class Tip extends Modal<TipProps> {
     Modal.prototype.init.call(this, tmpProps, syncTag)
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentDidUpdate (nextProps) {
     if (
       nextProps.position !== this.props.position
     ) {

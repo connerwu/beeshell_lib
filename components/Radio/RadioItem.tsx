@@ -48,7 +48,7 @@ export default class RadioItem extends Component<RadioItemProps> {
     this.animated && this.animated.toIn()
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentDidUpdate (nextProps) {
     if (nextProps.checked !== this.props.checked) {
       this.animated && this.animated.toIn()
     }

@@ -117,7 +117,7 @@ export class Calendar extends React.Component<CalendarProps, any> {
   componentDidMount() {
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     const keys = [ 'date', 'startDate', 'endDate']
 
     const propsChanged = keys.some((key) => {
