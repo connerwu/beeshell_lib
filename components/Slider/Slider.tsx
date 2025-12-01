@@ -110,7 +110,19 @@ export default class Slider extends PureComponent<SliderProps, State> {
     this.showAndroidTip = this.props.showTip && Platform.OS === 'android'
   }
 
-  componentWillMount () {
+  // componentWillMount () {
+  //   this.panResponder = PanResponder.create({
+  //     onStartShouldSetPanResponder: this.touchStart,
+  //     onMoveShouldSetPanResponder: _ => false,
+  //     onPanResponderGrant: this.pressStart,
+  //     onPanResponderMove: this.lastMove,
+  //     onPanResponderRelease: this.touchEnd,
+  //     onPanResponderTerminationRequest: _ => false,
+  //     onPanResponderTerminate: this.touchEnd
+  //   })
+  // }
+
+  componentDidUpdate (nextProps) {
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: this.touchStart,
       onMoveShouldSetPanResponder: _ => false,
@@ -120,9 +132,6 @@ export default class Slider extends PureComponent<SliderProps, State> {
       onPanResponderTerminationRequest: _ => false,
       onPanResponderTerminate: this.touchEnd
     })
-  }
-
-  componentDidUpdate (nextProps) {
     let newValue = 0
     let newOtherValue = 0
     const { range } = this.props

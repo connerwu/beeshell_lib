@@ -102,7 +102,7 @@ export class Tip extends Modal<TipProps> {
     ) {
       this.init(nextProps, false)
     } else {
-      Modal.prototype.componentWillReceiveProps.call(this, nextProps)
+      Modal.prototype.componentDidUpdate.call(this, nextProps)
     }
   }
 

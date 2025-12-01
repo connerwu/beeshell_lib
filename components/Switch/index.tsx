@@ -72,16 +72,6 @@ export class Switch extends Component<SwitchProps, SwitchState> {
   }
 
   componentDidUpdate (nextProps) {
-    if (nextProps.value === this.state.value) {
-      return
-    }
-
-    if (typeof nextProps.value !== 'undefined' && nextProps.value !== this.props.value) {
-      this.toggleSwitchToValue(true, nextProps.value)
-    }
-  }
-
-  componentWillMount () {
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onStartShouldSetPanResponderCapture: () => true,
@@ -92,7 +82,27 @@ export class Switch extends Component<SwitchProps, SwitchState> {
       onPanResponderMove: this.onPanResponderMove,
       onPanResponderRelease: this.onPanResponderRelease
     })
+    if (nextProps.value === this.state.value) {
+      return
+    }
+
+    if (typeof nextProps.value !== 'undefined' && nextProps.value !== this.props.value) {
+      this.toggleSwitchToValue(true, nextProps.value)
+    }
   }
+
+  // componentWillMount () {
+  //   this.panResponder = PanResponder.create({
+  //     onStartShouldSetPanResponder: () => true,
+  //     onStartShouldSetPanResponderCapture: () => true,
+  //     onMoveShouldSetPanResponder: () => true,
+  //     onMoveShouldSetPanResponderCapture: () => true,
+  //     onPanResponderTerminationRequest: () => true,
+  //     onPanResponderGrant: this.onPanResponderGrant,
+  //     onPanResponderMove: this.onPanResponderMove,
+  //     onPanResponderRelease: this.onPanResponderRelease
+  //   })
+  // }
 
   onPanResponderGrant = () => {
     const { disabled, rockerSize } = this.props

@@ -107,16 +107,16 @@ export class Modal<
     }
   }
 
-  componentWillReceiveProps (nextProps) {
-    if (
-      nextProps.animatedTranslateX !== this.props.animatedTranslateX ||
-      nextProps.animatedTranslateY !== this.props.animatedTranslateY ||
-      nextProps.containerStyle !== this.props.containerStyle ||
-      nextProps.style !== this.props.style
-    ) {
-      this.init(nextProps, false)
-    }
-  }
+  // componentWillReceiveProps (nextProps) {
+  //   if (
+  //     nextProps.animatedTranslateX !== this.props.animatedTranslateX ||
+  //     nextProps.animatedTranslateY !== this.props.animatedTranslateY ||
+  //     nextProps.containerStyle !== this.props.containerStyle ||
+  //     nextProps.style !== this.props.style
+  //   ) {
+  //     this.init(nextProps, false)
+  //   }
+  // }
 
   componentWillUnmount () {
     this.close().catch(e => {
@@ -125,6 +125,14 @@ export class Modal<
   }
 
   componentDidUpdate (prevProps, prevState) {
+    if (
+      prevProps.animatedTranslateX !== this.props.animatedTranslateX ||
+      prevProps.animatedTranslateY !== this.props.animatedTranslateY ||
+      prevProps.containerStyle !== this.props.containerStyle ||
+      prevProps.style !== this.props.style
+    ) {
+      this.init(this.props, false)
+    }
     if (this.modalState.topviewId && TopviewGetInstance()) {
       TopviewGetInstance().replace(this.getContent(), this.modalState.topviewId)
     }
