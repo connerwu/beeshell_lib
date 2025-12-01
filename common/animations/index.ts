@@ -1,4 +1,6 @@
-import { Animated, Easing } from 'react-native'
+import { Animated, Easing, Platform } from 'react-native'
+
+const useNativeDriverForHarmony = Platform.OS === 'harmony';
 
 class CommonAnimated {
   state: any
@@ -122,25 +124,25 @@ export class FadeAnimated extends CommonAnimated {
 
       this.animated = Animated.parallel([
         Animated.timing(this.state.opacity, {
-          useNativeDriver:false,
+          useNativeDriver: useNativeDriverForHarmony,
           toValue: this.getPropertyValue('opacity', !tag),
           duration: this.state.opacityDuration || this.state.duration,
           easing: this.state.easing
         }),
         Animated.timing(this.state.scale, {
-          useNativeDriver: false,
+          useNativeDriver: useNativeDriverForHarmony,
           toValue: this.getPropertyValue('scale', !tag),
           duration: this.state.scaleDuration || this.state.duration,
           easing: this.state.easing
         }),
         Animated.timing(this.state.translateX, {
-          useNativeDriver:false,
+          useNativeDriver: useNativeDriverForHarmony,
           toValue: this.getPropertyValue('translateX', !tag),
           duration: this.state.duration,
           easing: this.state.easing
         }),
         Animated.timing(this.state.translateY, {
-          useNativeDriver:false,
+          useNativeDriver: useNativeDriverForHarmony,
           toValue: this.getPropertyValue('translateY', !tag),
           duration: this.state.duration,
           easing: this.state.easing
@@ -251,7 +253,7 @@ export class SlideAnimated extends CommonAnimated {
 
       const parallelArray = keys.map((key: any) => {
         return Animated.timing(this.state[key], {
-          useNativeDriver: false,
+          useNativeDriver: useNativeDriverForHarmony,
           toValue: this.getPropertyValue(key, !tag),
           duration: this.state.duration,
           easing: this.state.easing
@@ -260,7 +262,7 @@ export class SlideAnimated extends CommonAnimated {
 
       this.animated = Animated.parallel([
         Animated.timing(this.state.opacity, {
-          useNativeDriver:false,
+          useNativeDriver: useNativeDriverForHarmony,
           toValue: this.getPropertyValue('opacity', !tag),
           duration: this.state.duration,
           easing: this.state.easing
