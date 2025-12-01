@@ -1,14 +1,14 @@
 {
-  "name": "beeshell-temp",
+  "name": "beeshell-ls",
   "version": "2.0.11-rc.1",
   "description": "A UI library for react native.",
-  "main": "index.js",
+  "main": "index.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "harmony": {
-    "alias": "beeshell-temp"
+    "alias": "beeshell-ls"
   },
   "keywords": [
     "beeshell",
@@ -19,5 +19,5 @@
     "framework"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/react-native-oh-library/beeshell"
+  "homepage": "https://github.com/react-native-oh-library/beeshell-ls"
 }
