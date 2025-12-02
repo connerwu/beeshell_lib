@@ -150,16 +150,16 @@ export class SlideModal<
     }
   }
 
-  componentDidUpdate (nextProps) {
+  componentDidUpdate (prevProps) {
     if (
-      nextProps.direction !== this.props.direction ||
-      nextProps.align !== this.props.align ||
-      nextProps.offsetX !== this.props.offsetX ||
-      nextProps.offsetY !== this.props.offsetY ||
-      nextProps.screenWidth !== this.props.screenWidth ||
-      nextProps.screenHeight !== this.props.screenHeight
+      prevProps.direction !== this.props.direction ||
+      prevProps.align !== this.props.align ||
+      prevProps.offsetX !== this.props.offsetX ||
+      prevProps.offsetY !== this.props.offsetY ||
+      prevProps.screenWidth !== this.props.screenWidth ||
+      prevProps.screenHeight !== this.props.screenHeight
     ) {
-      this.init(nextProps, false)
+      this.init(this.props, false)
     }
   }
 

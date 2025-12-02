@@ -96,13 +96,13 @@ export class Tip extends Modal<TipProps> {
     Modal.prototype.init.call(this, tmpProps, syncTag)
   }
 
-  componentDidUpdate (nextProps) {
+  componentDidUpdate (prevProps) {
     if (
-      nextProps.position !== this.props.position
+      prevProps.position !== this.props.position
     ) {
-      this.init(nextProps, false)
+      this.init(this.props, false)
     } else {
-      Modal.prototype.componentDidUpdate.call(this, nextProps)
+      Modal.prototype.componentDidUpdate.call(this, this.props)
     }
   }
 

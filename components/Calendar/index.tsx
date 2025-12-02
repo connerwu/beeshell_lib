@@ -117,18 +117,18 @@ export class Calendar extends React.Component<CalendarProps, any> {
   componentDidMount() {
   }
 
-  componentDidUpdate(nextProps) {
+  componentDidUpdate(prevProps) {
     const keys = [ 'date', 'startDate', 'endDate']
 
     const propsChanged = keys.some((key) => {
-      if (nextProps[key] !== this.props[key]) {
+      if (prevProps[key] !== this.props[key]) {
         return true
       }
     })
 
     if (propsChanged) {
       this.setState({
-        ...this.init(nextProps)
+        ...this.init(this.props)
       })
     }
   }

@@ -123,7 +123,7 @@ export default class Slider extends PureComponent<SliderProps, State> {
     })
   }
 
-  componentDidUpdate (nextProps) {
+  componentDidUpdate (prevProps) {
     let newValue = 0
     let newOtherValue = 0
     const { range } = this.props

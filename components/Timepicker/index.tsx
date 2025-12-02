@@ -109,11 +109,11 @@ export class Timepicker extends React.Component<TimepickerProps, any> {
     return data
   }
 
-  componentDidUpdate (nextProps) {
-    if (nextProps.value !== this.props.value) {
+  componentDidUpdate (prevProps) {
+    if (prevProps.value !== this.props.value) {
       this.setState({
         ...this.state,
-        ...this.init(nextProps)
+        ...this.init(this.props)
       })
     }
   }

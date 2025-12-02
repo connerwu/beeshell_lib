@@ -260,13 +260,13 @@ export class Cascader extends Component<CascaderProps, any> {
     }
   }
 
-  componentDidUpdate(nextProps) {
+  componentDidUpdate(prevProps) {
     if (
-      nextProps.value !== this.props.value ||
-      nextProps.data !== this.props.data
+      prevProps.value !== this.props.value ||
+      prevProps.data !== this.props.data
     ) {
       this.setState({
-        ...this.init(nextProps)
+        ...this.init(this.props)
       })
     }
   }

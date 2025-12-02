@@ -34,8 +34,8 @@ export class CheckboxItemAllCheck extends CheckboxItem<CheckboxItemAllCheckProps
     }
   }
 
-  componentDidUpdate (nextProps) {
-    if (nextProps.checkedStatus !== this.props.checkedStatus) {
+  componentDidUpdate (prevProps) {
+    if (prevProps.checkedStatus !== this.props.checkedStatus) {
       this.animated && this.animated.toIn()
     }
   }

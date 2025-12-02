@@ -42,15 +42,15 @@ export class Progress extends Component<ProgressProps, any> {
   componentDidMount () {
   }
 
-  componentDidUpdate (nextProps: ProgressProps) {
+  componentDidUpdate (preProps: ProgressProps) {
     if (
       this.props.easing &&
-      nextProps.percent !== this.props.percent
+      preProps.percent !== this.props.percent
     ) {
       this.toAnimate(
         this.state.barWidth,
+        this.getWidthByPercent(this.state.wrapperWidth, preProps.percent),
         this.getWidthByPercent(this.state.wrapperWidth, this.props.percent),
-        this.getWidthByPercent(this.state.wrapperWidth, nextProps.percent),
         this.props.duration
       )
     }
