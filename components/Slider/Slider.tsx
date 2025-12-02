@@ -107,22 +107,11 @@ export default class Slider extends PureComponent<SliderProps, State> {
       otherTip: `${this.getValueByProps(true)}`
     }
     this.isOther = false
-    this.showAndroidTip = this.props.showTip && Platform.OS === 'android'
+    this.showAndroidTip = this.props.showTip && Platform.OS === 'android';
+    this.initPanResponder();
   }
 
-  // componentWillMount () {
-  //   this.panResponder = PanResponder.create({
-  //     onStartShouldSetPanResponder: this.touchStart,
-  //     onMoveShouldSetPanResponder: _ => false,
-  //     onPanResponderGrant: this.pressStart,
-  //     onPanResponderMove: this.lastMove,
-  //     onPanResponderRelease: this.touchEnd,
-  //     onPanResponderTerminationRequest: _ => false,
-  //     onPanResponderTerminate: this.touchEnd
-  //   })
-  // }
-
-  componentDidUpdate (nextProps) {
+  initPanResponder(){
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: this.touchStart,
       onMoveShouldSetPanResponder: _ => false,
@@ -132,14 +121,17 @@ export default class Slider extends PureComponent<SliderProps, State> {
       onPanResponderTerminationRequest: _ => false,
       onPanResponderTerminate: this.touchEnd
     })
+  }
+
+  componentDidUpdate (nextProps) {
     let newValue = 0
     let newOtherValue = 0
     const { range } = this.props
-    if (range && nextProps.value instanceof Array) {
-      newValue = nextProps.value[0]
-      newOtherValue = nextProps.value[1]
+    if (range && this.props.value instanceof Array) {
+      newValue = this.props.value[0]
+      newOtherValue = this.props.value[1]
     } else {
-      newValue = nextProps.value
+      newValue = this.props.value
     }
 
     if (this.getValueByProps() !== newValue) {

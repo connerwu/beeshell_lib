@@ -69,9 +69,10 @@ export class Switch extends Component<SwitchProps, SwitchState> {
     }
 
     this.offset = switchWidth - switchHeight + 1
+    this.initPanResponder();
   }
 
-  componentDidUpdate (nextProps) {
+  initPanResponder() {
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onStartShouldSetPanResponderCapture: () => true,
@@ -82,12 +83,15 @@ export class Switch extends Component<SwitchProps, SwitchState> {
       onPanResponderMove: this.onPanResponderMove,
       onPanResponderRelease: this.onPanResponderRelease
     })
-    if (nextProps.value === this.state.value) {
+  }
+
+  componentDidUpdate (preProps) {
+    if (preProps.value === this.state.value) {
       return
     }
 
-    if (typeof nextProps.value !== 'undefined' && nextProps.value !== this.props.value) {
-      this.toggleSwitchToValue(true, nextProps.value)
+    if (typeof preProps.value !== 'undefined' && preProps.value !== this.props.value) {
+      this.toggleSwitchToValue(true, this.props.value)
     }
   }
 
