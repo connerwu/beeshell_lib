@@ -119,9 +119,15 @@ export class TreeView extends React.Component<TreeViewProps, any> {
                   style={[treeViewStyles.item ]}
                   onPress={this.handlePress.bind(this, item)}>
                   {
-                    children.length && <View style={treeViewStyles.itemIcon}>
-                      {item[fieldKeys.activeKey] ? activeIcon : inactiveIcon}
-                    </View>
+                    // children.length && <View style={treeViewStyles.itemIcon}>
+                    //   {item[fieldKeys.activeKey] ? activeIcon : inactiveIcon}
+                    // </View>
+
+                    children.length > 0 ? (
+                      <View style={treeViewStyles.itemIcon}>
+                        {item[fieldKeys.activeKey] ? activeIcon : inactiveIcon}
+                      </View>
+                    ) : null
                   }
                   <Text style={[treeViewStyles.itemText]}>{item[fieldKeys.labelKey]}</Text>
                 </TouchableOpacity>
