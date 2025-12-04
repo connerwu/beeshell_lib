@@ -59,16 +59,17 @@ export class Switch extends Component<SwitchProps, SwitchState> {
   constructor (props) {
     super(props)
     const { rockerSize, value, disabled } = props
-
+    this.offset = switchWidth - switchHeight + 1
     this.state = {
       value,
       toggleable: true,
       alignItems: value ? 'flex-end' : 'flex-start',
       handlerAnimation: new Animated.Value(rockerSizeMap[rockerSize]),
-      switchAnimation: new Animated.Value(value ? -1 : 1)
+      // switchAnimation: new Animated.Value(value ? -1 : 1)
+      switchAnimation: new Animated.Value(value ? this.offset : -this.offset)
     }
 
-    this.offset = switchWidth - switchHeight + 1
+
     this.initPanResponder();
   }
 
@@ -160,7 +161,7 @@ export class Switch extends Component<SwitchProps, SwitchState> {
         }, () => {
           callback && callback(toValue)
         })
-        switchAnimation.setValue(toValue ? -1 : 1)
+        // switchAnimation.setValue(toValue ? -1 : 1)//修复闪动
       })
     }
   }
@@ -172,7 +173,8 @@ export class Switch extends Component<SwitchProps, SwitchState> {
       {
         toValue: value ? this.offset : -this.offset,
         duration: 200,
-        easing: Easing.linear
+        easing: Easing.linear,
+        useNativeDriver: false   // ← 必须加
       }
     ).start(callback)
   }
@@ -184,7 +186,8 @@ export class Switch extends Component<SwitchProps, SwitchState> {
       {
         toValue: value,
         duration: 200,
-        easing: Easing.linear
+        easing: Easing.linear,
+        useNativeDriver: false   // ← 必须加
       }
     ).start(callback)
   }
