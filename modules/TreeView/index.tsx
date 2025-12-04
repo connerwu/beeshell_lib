@@ -122,7 +122,8 @@ export class TreeView extends React.Component<TreeViewProps, any> {
                     // children.length && <View style={treeViewStyles.itemIcon}>
                     //   {item[fieldKeys.activeKey] ? activeIcon : inactiveIcon}
                     // </View>
-                     children.length > 0 ? (
+
+                    children.length > 0 ? (
                       <View style={treeViewStyles.itemIcon}>
                         {item[fieldKeys.activeKey] ? activeIcon : inactiveIcon}
                       </View>
