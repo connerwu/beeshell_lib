@@ -469,7 +469,8 @@ export default class Slider extends PureComponent<SliderProps, State> {
     const markViewArr = []
     while (maxStep > currStep) {
       if (React.isValidElement(marks[currStep])) {
-        markViewArr.push(marks[currStep])
+        // markViewArr.push(marks[currStep])
+         markViewArr.push(React.cloneElement(marks[currStep], { key: currStep }))
       } else {
         markViewArr.push(
           <View key={currStep} style={{ width: thumbSize, alignItems: 'center' }}>
@@ -731,6 +732,7 @@ export default class Slider extends PureComponent<SliderProps, State> {
     // 如果value > oldValue，则代表两个滑块滑动位置互换，则更新渲染层级
     let tracks = [
       <View
+        key="trackBackground"
         style={[ { borderRadius: trackWeight / 2 }, trackStyle ]}
         onLayout={this.measureTrack}
       />
